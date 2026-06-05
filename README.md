@@ -13,8 +13,6 @@ against a Polar H9 reference device.
 
 | Item        | Detail                                      |
 |-------------|---------------------------------------------|
-| Course      | Advanced Biostatistics — PhD Coursework     |
-| Supervisor  | Dr. Ibrahim Sadek                           |
 | Method      | R (Method 1)                                |
 | Dataset     | Figshare DOI: 10.6084/m9.figshare.26013157  |
 | Reference   | DOI: 10.1038/s41597-024-03950-5             |
@@ -24,8 +22,7 @@ against a Polar H9 reference device.
 
 ## Project Roadmap
 Raw BCG Signal (140 Hz, under-mattress sensor)
-│
-▼
+│▼
 ┌─────────────────────────────┐
 │  load_data.R                │  Read BCG + RR files, match by date
 │  22 subjects · 42 nights    │  Handle non-standard CSV format
@@ -230,17 +227,5 @@ pval   <- 2 * pt(-abs(t_stat), df = n - 2)
 
 ---
 
-## Critical Bugs Fixed During Development
 
-| Bug | Cause | Fix |
-|-----|-------|-----|
-| Pearson r = NA | 8h UTC offset between BCG and RR | Subtract 8×3600×1000 ms |
-| MAE = 25 BPM bias | mpd=1 caused 2× peak count | mpd = round(fs × 0.5) = 70 |
-| BCG reads 1 sample | Non-standard CSV format | Custom readLines() parser |
 
----
-
-## License
-
-This project is for academic use only.
-Dataset © original authors — see reference publication.
